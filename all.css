@@ -1,0 +1,496 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*標題*/
+
+nav {
+    margin: 0 auto;
+    padding: 32px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+.logo {
+    width: 90px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left:5%;
+}
+
+.SP_btn {
+    display: none;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    gap: 40px
+}
+
+.navItem {
+    position: relative;
+}
+
+.navLink {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.border {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* hover */
+
+.navLink:hover~.border {
+    transition: all .3s;
+    opacity: 1;
+}
+
+.navLink:hover {
+    font-weight: 600;
+}
+
+/* footer */
+footer {
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/footer-bg-lg.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.footerControl {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5% ;
+    
+}
+
+.footer-logo {
+    width: 50%;
+}
+
+.footer-title {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.footer-titleSec {
+    line-height: 24px;
+    color: #919191;
+}
+
+.footerItem {
+    display: flex;
+    align-items: center;
+    border: 1px solid #c1c1c1;
+    padding: 8px 24px;
+    margin-right: 5%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all .3s;
+}
+
+.footerItem img {
+    width: 56px;
+    margin-right: 8px;
+}
+
+.footerItem img:first-child {
+    filter: brightness(0);
+}
+
+.footerItem p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.footerItem:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.footerItem:hover img {
+    filter: brightness(10);
+}
+
+
+@media (max-width:768px) {
+    nav{
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+    }
+    .navList {
+        flex-direction: column;
+        position: absolute;
+        background-color: rgb(255, 255, 255, 0.8);
+        top: 100%;
+        width: 100%;
+        align-items: center;
+        left: 0;
+        clip-path: inset(0 0 100% 0);
+        transition: all .3s;
+        gap: 0;
+    }
+
+    .navList--active {
+        clip-path: inset(0 0 0 0);
+    }
+
+    .navItem {
+        padding: 2.5% 0;
+    }
+
+    .SP_btn {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5%;
+        cursor: pointer;
+    }
+
+    .SP_btn i {
+        font-size: 40px;
+    }
+
+
+    footer {
+        background-image: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/d796f511bed88b5468b1c02b9dc1f17048b1448f/2024%20web-camp/footer-bg-sm.png);
+        padding: 40px 0;
+    }
+
+    .footerLeft {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+    }
+
+    .footerControl {
+        flex-direction: column;
+    }
+
+    .footerList {
+        width: 87.25%;
+        margin: 0 auto;
+    }
+}
+
+/* 中間橫幅 */
+.pointControl {
+    background-color: #fafafa;
+    padding: 80px 0;
+}
+
+.titleContainer {
+    max-width: 670px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.ms-auto {
+    margin-left: auto;
+}
+
+.pa-r{
+    padding-right: 85%;
+}
+
+.pa-l{
+    padding-left: 85%;
+}
+
+.pointImg {
+    width: 64px;
+    margin: 0 auto;
+}
+
+
+.textunder{
+    position: relative;
+
+}
+
+.underLine {
+    position: absolute;
+    bottom:0px;
+    right:-15px;
+}
+
+
+
+.titleContainer h2 {
+    font-size: 24px;
+    line-height: 28.8px;
+}
+
+
+/* 2b-2c經驗 */
+.servicelist{
+    max-width: 636px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.serviceitems{
+    max-width: 298px;
+}
+.borderbotton{
+    margin-bottom: 8px;
+    color: #5b5b5b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* h3 偽元素 */
+.borderbotton::after {
+    content: "";
+    display: block;
+    width: 24px;
+    border-bottom: 5px solid #c1c1c1;
+}
+.serviceitems p{
+    text-align: center;
+    color: #3B3B3B;
+}
+
+
+/* 作品選單 */
+.cardControl {
+    padding: 120px 0;
+    margin-left: 5% ;
+
+}
+
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 80px 24px;
+}
+
+.cardItem {
+    width: calc(50% - 12px);
+}
+
+
+.content {
+    padding: 16px;
+    line-height: 1.5;
+}
+
+.imgControl {
+    max-width: 636px;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.imgControl img {
+    transition: all .3s;
+}
+
+.imgControl:hover img {
+    scale: 1.05;
+}
+
+
+.txt-bg {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.txt-sm {
+    line-height: 24px;
+}
+
+.txt-gray {
+    color: #919191
+}
+
+.tagsList {
+    display: flex;
+    gap: 16px;
+}
+
+.tagsItem {
+    padding: 4px 12px;
+    background-color: #f1f1f1;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all ;
+}
+
+.tagsItem:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* page */
+
+
+.pageList {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.pageItem {
+    padding: 2px 13px;
+    border-radius: 4px;
+    transition: all .3s;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.pageItem:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+@media (max-width:768px) {
+    .dn-sp {
+        display: none;
+    }
+    .pointControl {
+        padding: 40px 0 80px 0;
+    }
+    .titleContainer  {
+        max-width: 300px;
+    }
+    .titleContainer h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .servicelist {
+        flex-direction: column;
+        align-items: center;
+    }
+    .serviceitems{
+        max-width: 235px;
+    }
+
+
+  .pointImg {
+    width: 64px;
+    margin: 0 auto;
+ }
+    
+
+
+    
+    .cardControl {
+        padding: 80px 0;
+    }
+
+    .cardItem {
+        width: 100%;
+    }
+
+    .tagsList {
+        gap: 8px;
+    }
+
+    .txt-bg {
+        font-size: 20px;
+    }
+}
